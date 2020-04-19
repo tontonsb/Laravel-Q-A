@@ -30,4 +30,4 @@ Read more: https://laravel.com/docs/master/routing
 
 ### How does rate limiting work?
 
-As the first hit comes in, [Rate Limiter](https://github.com/laravel/framework/blob/7.x/src/Illuminate/Cache/RateLimiter.php) stores an entry with value `1` in the cache. The key is the hash of either user identifier or IP with an optional prefix (cache group). On following hits the value is increased until the decay time passes and the entry is forgotten. Then it starts over.
+As the first hit comes in, [Rate Limiter](https://github.com/laravel/framework/blob/7.x/src/Illuminate/Cache/RateLimiter.php) stores an entry with value `1` in the cache. The key is the hash of either user identifier or IP with an optional prefix (throttling group). On following hits the value is increased until the decay time passes and the cache entry (*bucket*) is forgotten. Then it starts over.

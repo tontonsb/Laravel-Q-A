@@ -26,6 +26,23 @@ It's usually done in the `routes/web.php` and `routes/api.php` files that are [l
 
 Read more: https://laravel.com/docs/master/routing
 
+### How do you assign PHP variables to JavaScript variables in the view?
+
+There is the `@json` [Blade](https://laravel.com/docs/master/blade) directive that simplifies this as much as humanly possible:
+
+```
+const enemies = @json($enemies)
+```
+
+It also helps with passing value as attribute to a Vue component, however you must make sure to the attribute value quotes:
+
+```
+<enemy-list 
+    :enemies='@json($enemies)'
+    :friends='@json($friends)' >
+</enemy-list>
+```
+
 ## Security
 
 ### Why is [logout button](https://github.com/laravel/ui/blob/ec838c75ba1886d014c5465b1ecc79b2071f46c7/src/Auth/bootstrap-stubs/layouts/app.stub#L58) in the [UI scaffolding](https://laravel.com/docs/master/frontend) submitting a form?

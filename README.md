@@ -36,6 +36,9 @@ There is the `@json` [Blade](https://laravel.com/docs/master/blade) directive th
 const enemies = @json($enemies)
 ```
 
+
+This directive is a [simple wrapper](https://github.com/laravel/framework/blob/0b12ef19623c40e22eff91a4b48cb13b3b415b25/src/Illuminate/View/Compilers/Concerns/CompilesJson.php) around (json_encode)[https://www.php.net/manual/en/function.json-encode.php] and it can handle the same parameters.
+
 It also helps with passing value as attribute to a Vue component, however you must make sure to the attribute value quotes:
 
 ```

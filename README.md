@@ -8,7 +8,7 @@ Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested
 
 - [Trivia](#trivia)
   - [What does the name *Laravel* mean?](#what-does-the-name-laravel-mean)
-- [Usage](#usage)
+- [General usage](#general-usage)
   - [How do you route in Laravel?](#how-do-you-route-in-laravel)
   - [How do you assign PHP variables to JavaScript variables in the view?](#how-do-you-assign-php-variables-to-javascript-variables-in-the-view)
 - [Security](#security)
@@ -25,7 +25,7 @@ Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested
 
 It is [allegedly](https://twitter.com/abigailotwell/status/636178413523329024) inspired by Cair Paravel, the capital of Narnia. Some have also noticed Tay**lor**-**a**-Ot**well**.
 
-## Usage
+## General usage
 
 ### How do you route in Laravel?
 

@@ -85,6 +85,38 @@ If you have to use raw queries, make sure you are not inserting the user input d
 User::whereRaw("(CONCAT(first_name,' ',last_name) like ?)", [$nameToSearch]);
 ```
 
+## Specific cases
+
+### How would you serve a two gigabyte file from the storage?
+
+You should not involve PHP in serving assets if you don't need to. But sometimes you have to control the access. Here are some things that one should not forget when serving huge files:
+
+```php
+// In this example Upload is a model with `name`, `path` and `mime` attributes
+public function download(Upload $file)
+{
+    // Disable timeouts
+    set_time_limit(0);
+
+    // Grab a stream handle from your storage
+    $fs = Storage::getDriver();
+    $stream = $fs->readStream($file->path);
+
+    // Disable output buffering or your script will run out of memory
+    if (ob_get_level()) ob_end_clean();
+
+    // Return StreamedResponse
+    return response()->stream(function() use($stream) {
+        fpassthru($stream);
+    }, 200, [   // We need to set headers manually
+        'Content-Type' => $file->mime,
+        'Content-Disposition' => 'attachment; filename="'.$file->name.'"',
+    ]);
+}
+```
+
+There is also another approach — you can instruct your web server to serve the file using features like like [XSendFile](https://tn123.org/mod_xsendfile/) or [X-Accel](https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/).
+
 ## Internals
 
 ### How does rate limiting work?

@@ -2,6 +2,8 @@
 
 Bits of Laravel knowledge in Q & A format. A.k.a. Laravel "interview" questions.
 
+The list is not intended to reflect what actually goes on in interviews. Instead the goal is to list questions that might (except for trivia) and should (if they are relevant to job) be asked in interviews — such questions that reflect knowledge and understanding of Laravel instead of plain fact reciting.
+
 Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested in sharing your knowledge.
 
 ## Trivia

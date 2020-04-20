@@ -22,7 +22,7 @@ Route::get('cabbages', 'CellarController@getCabbages');
 Route::put('lettuce', 'CellarController@putLettuce');
 ```
 
-It's usually done in the `routes/web.php` and `routes/app.php` files that are [loaded by framework](https://github.com/laravel/laravel/blob/master/app/Providers/RouteServiceProvider.php). The `App/Http/Controllers` namespace is added to the controller names by default.
+It's usually done in the `routes/web.php` and `routes/api.php` files that are [loaded by framework](https://github.com/laravel/laravel/blob/master/app/Providers/RouteServiceProvider.php). The `App/Http/Controllers` namespace is added to the controller names by default.
 
 Read more: https://laravel.com/docs/master/routing
 

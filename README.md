@@ -113,8 +113,7 @@ public function download(Upload $file)
     set_time_limit(0);
 
     // Grab a stream handle from your storage
-    $fs = Storage::getDriver();
-    $stream = $fs->readStream($file->path);
+    $stream = Storage::readStream($file->path);
 
     // Disable output buffering or your script will run out of memory
     if (ob_get_level()) ob_end_clean();

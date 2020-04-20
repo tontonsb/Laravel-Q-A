@@ -18,7 +18,7 @@ It is [allegedly](https://twitter.com/abigailotwell/status/636178413523329024) i
 
 Specify the route and action using the `Route` facade. There's a variety of ways:
 
-```
+```php
 Route::get('get-nothing', function() {return 'You get no cabbage.';});
 Route::get('cabbages', 'CellarController@getCabbages');
 Route::put('lettuce', 'CellarController@putLettuce');
@@ -32,7 +32,7 @@ Read more: https://laravel.com/docs/master/routing
 
 There is the `@json` [Blade](https://laravel.com/docs/master/blade) directive that simplifies this as much as humanly possible:
 
-```
+```js
 const enemies = @json($enemies)
 ```
 
@@ -41,7 +41,7 @@ This directive is a [simple wrapper](https://github.com/laravel/framework/blob/0
 
 It also helps with passing value as attribute to a Vue component, however you must make sure to the attribute value quotes:
 
-```
+```html
 <enemy-list 
     :enemies='@json($enemies)'
     :friends='@json($friends)' >
@@ -54,13 +54,13 @@ It also helps with passing value as attribute to a Vue component, however you mu
 
 To safeguard you against [cross site request forgery](https://laravel.com/docs/master/csrf). To understand it, let us consider the case without this. Your logout button might be just
 
-```
+```html
 <a href={{route('logout')}}>Logout</a>
 ```
 
 and the route would be set up to accept a GET request:
 
-```
+```php
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');  // or `any` instead of `get`
 ```
 
@@ -72,7 +72,7 @@ To prevent such scenarios all state changing operations should use appropriate r
 
 [Query builder](https://laravel.com/docs/master/queries) and [Eloquent](https://laravel.com/docs/master/eloquent) (that's built on top of query builder) both do as much as possible to protect you. You are quite safe as long as you are doing simple queries:
 
-```
+```php
 User::where('active', true)
     ->whereHas('role', function($role) {
         $role->where('name', 'client');
@@ -81,7 +81,7 @@ User::where('active', true)
 
 If you have to use raw queries, make sure you are not inserting the user input directly in the query but supply it separately, as you would do with prepared statements:
 
-```
+```php
 User::whereRaw("(CONCAT(first_name,' ',last_name) like ?)", [$nameToSearch]);
 ```
 

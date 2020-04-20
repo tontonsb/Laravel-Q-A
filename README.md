@@ -8,7 +8,7 @@ Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested
 
 - [Trivia](#trivia)
   - [What does the name *Laravel* mean?](#what-does-the-name-laravel-mean)
-- [General usage](#general-usage)
+- [Everyday usage](#everyday-usage)
   - [How do you route in Laravel?](#how-do-you-route-in-laravel)
   - [How do you assign PHP variables to JavaScript variables in the view?](#how-do-you-assign-php-variables-to-javascript-variables-in-the-view)
 - [Security](#security)
@@ -25,7 +25,9 @@ Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested
 
 It is [allegedly](https://twitter.com/abigailotwell/status/636178413523329024) inspired by Cair Paravel, the capital of Narnia. Some have also noticed Tay**lor**-**a**-Ot**well**.
 
-## General usage
+## Everyday usage
+
+The solutions to problems in this section are thoroughly discussed in the [official documentation](https://laravel.com/docs/). Treat these as generic interview questions with an example, non-exhaustive answer. The later sections will delve into know-how and less documented features of Laravel.
 
 ### How do you route in Laravel?
 
@@ -37,9 +39,7 @@ Route::get('cabbages', 'CellarController@getCabbages');
 Route::put('lettuce', 'CellarController@putLettuce');
 ```
 
-It's usually done in the `routes/web.php` and `routes/api.php` files that are [loaded by framework](https://github.com/laravel/laravel/blob/master/app/Providers/RouteServiceProvider.php). The `App/Http/Controllers` namespace is added to the controller names by default.
-
-Read more: https://laravel.com/docs/master/routing
+It's usually done in the `routes/web.php` and `routes/api.php` files that are [loaded by framework](https://github.com/laravel/laravel/blob/master/app/Providers/RouteServiceProvider.php). The `App/Http/Controllers` namespace is added to the controller names by default. [See docs.](https://laravel.com/docs/master/routing)
 
 ### How do you assign PHP variables to JavaScript variables in the view?
 
@@ -49,10 +49,9 @@ There is the `@json` [Blade](https://laravel.com/docs/master/blade) directive th
 const enemies = @json($enemies)
 ```
 
-
 This directive is a [simple wrapper](https://github.com/laravel/framework/blob/0b12ef19623c40e22eff91a4b48cb13b3b415b25/src/Illuminate/View/Compilers/Concerns/CompilesJson.php) around (json_encode)[https://www.php.net/manual/en/function.json-encode.php] and it can handle the same parameters.
 
-It also helps with passing value as attribute to a Vue component, however you must make sure to the attribute value quotes:
+It also helps with passing value as attribute to a Vue component, however you must make sure to put the attribute value in single quotes:
 
 ```html
 <enemy-list 
@@ -60,6 +59,8 @@ It also helps with passing value as attribute to a Vue component, however you mu
     :friends='@json($friends)' >
 </enemy-list>
 ```
+
+[See docs.](https://laravel.com/docs/master/blade#displaying-data)
 
 ## Security
 

@@ -6,6 +6,19 @@ The list is not intended to reflect what actually goes on in interviews. Instead
 
 Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested in sharing your knowledge.
 
+- [Trivia](#trivia)
+  - [What does the name *Laravel* mean?](#what-does-the-name-laravel-mean)
+- [Usage](#usage)
+  - [How do you route in Laravel?](#how-do-you-route-in-laravel)
+  - [How do you assign PHP variables to JavaScript variables in the view?](#how-do-you-assign-php-variables-to-javascript-variables-in-the-view)
+- [Security](#security)
+  - [Why is logout button in the UI scaffolding submitting a form?](#why-is-logout-button-in-the-ui-scaffolding-submitting-a-form)
+  - [How do you prevent SQL injections?](#how-do-you-prevent-sql-injections)
+- [Specific cases](#specific-cases)
+  - [How would you serve a two gigabyte file from the storage?](#how-would-you-serve-a-two-gigabyte-file-from-the-storage)
+- [Internals](#internals)
+  - [How does rate limiting work?](#how-does-rate-limiting-work)
+
 ## Trivia
 
 ### What does the name *Laravel* mean?

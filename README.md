@@ -128,7 +128,7 @@ public function download(Upload $file)
 }
 ```
 
-There is also another approach — you can instruct your web server to serve the file using features like like [XSendFile](https://tn123.org/mod_xsendfile/) or [X-Accel](https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/).
+Note that you have some other options if you don't need the agnosticism provided by [Flysystem](https://github.com/thephpleague/flysystem). If the file is on your disk you can instruct your web server to serve the file using features like like [XSendFile](https://tn123.org/mod_xsendfile/) or [X-Accel](https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/). If the file is on AWS S3, you can create an [expiring link](https://laravel.com/docs/master/filesystem#file-urls) to file.
 
 ## Internals
 

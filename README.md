@@ -11,6 +11,7 @@ Please read the [contributing guidelines](CONTRIBUTING.md) if you are interested
 - [Everyday usage](#everyday-usage)
   - [How do you route in Laravel?](#how-do-you-route-in-laravel)
   - [How do you assign PHP variables to JavaScript variables in the view?](#how-do-you-assign-php-variables-to-javascript-variables-in-the-view)
+  - [Which Laravel version do I have?](#which-laravel-version-do-i-have)
 - [Security](#security)
   - [Why is logout button in the UI scaffolding submitting a form?](#why-is-logout-button-in-the-ui-scaffolding-submitting-a-form)
   - [How do you prevent SQL injections?](#how-do-you-prevent-sql-injections)
@@ -61,6 +62,14 @@ It also helps with passing value as attribute to a Vue component, however you mu
 ```
 
 [See docs.](https://laravel.com/docs/master/blade#displaying-data)
+
+### Which Laravel version do I have?
+
+Find that out by using the artisan console
+
+```php
+php artisan --version
+```
 
 ## Security
 
